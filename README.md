@@ -4,8 +4,8 @@ This version allows for a constrained relationship between two variables. I want
 
 Example of how to use the class:
 
-```
-samples         = 25                            # The amount of LHCS samples requested
+```python
+    samples         = 25                            # The amount of LHCS samples requested
 
     Temperature     = np.linspace( 300, 1100, 50, dtype = np.float32 )
     Pressure        = 0.0011875*( Temperature - 300 )**2
@@ -35,7 +35,7 @@ samples         = 25                            # The amount of LHCS samples req
                         np.int8,
                         np.float32 ]
 
-    sampler         = LHCS( samples         = samples, 
+    sampler         = LHCS( samples       = samples, 
                           datanames       = datanames, 
                           dependencies    = dependencies, 
                           datalimits      = datalimits, 
@@ -43,4 +43,5 @@ samples         = 25                            # The amount of LHCS samples req
                           verbose         = True )
 
     sampler.run()
-    ```
+```
+    This would create a sampling of data with a constraint on the pressure as a function of temperature
